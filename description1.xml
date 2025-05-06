@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product>
+    <id>1</id>
+    <name>Телевизор Xiaomi</name>
+    <price>2100 BYN</price>
+    <image>assets/img/png/TV.png</image>
+    <description>Mi TV P1 впечатляет своей гармонично продуманной внешностью с тонкими рамками и стильными подставками, инновационным функционалом, дружественным интерфейсом Android TV. Модель имеет пульт ДУ, подключаемый по Bluetooth, и массу портов для создания сети устройств.</description>
+    <characteristics>
+      <characteristic>Серия: Mi TV P1</characteristic>
+      <characteristic>Диагональ экрана: 50”</characteristic>
+      <characteristic>Тип экрана: LED</characteristic>
+      <characteristic>Разрешение экрана: 4K (3840x2160)</characteristic>
+      <characteristic>Частота кадров: 60 Гц</characteristic>
+    </characteristics>
+  </product>
+
+  <product>
+    <id>2</id>
+    <name>Монитор MSI</name>
+    <price>1500 BYN</price>
+    <image>assets/img/png/МониторMSI.png</image>
+    <description>Игровой монитор MSI Optix G27CQ4 – 27" WQHD (2560x1440) с частотой 165 Гц, временем отклика 1 мс и изогнутой VA-панелью (1500R). Поддержка FreeSync, контрастность 3000:1 и подсветка Mystic Light для стильного гейминга.</description>
+    <characteristics>
+      <characteristic>Серия:  Optix G27CQ4</characteristic>
+      <characteristic>Диагональ экрана: 27"</characteristic>
+      <characteristic>Тип экрана: IPS</characteristic>
+      <characteristic>Разрешение экрана: 2560x1440</characteristic>
+      <characteristic>Частота кадров: 165 Гц</characteristic>
+    </characteristics>
+  </product>  
+
+<product>
+    <id>3</id>
+    <name>Монитор ASUS</name>
+    <price>800 BYN</price>
+    <image>assets/img/png/МониторASUS1.png</image>
+    <description>23.8-дюймовый монитор ASUS VA24EHE с IPS-матрицей, разрешением Full HD (1920x1080) и частотой обновления 75 Гц. Идеален для работы и мультимедиа.</description>
+    <characteristics>
+      <characteristic>Серия: VA24EHE</characteristic>
+      <characteristic>Диагональ экрана: 23.8"</characteristic>
+      <characteristic>Тип экрана: IPS</characteristic>
+      <characteristic>Разрешение экрана: 1920x1080</characteristic>
+      <characteristic>Частота кадров: 75 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>4</id>
+    <name>Монитор ASUS</name>
+    <price>700 BYN</price>
+    <image>assets/img/png/МониторASUS2.png</image>
+    <description>21.5-дюймовый игровой монитор ASUS VP228HE с TN-матрицей, разрешением Full HD (1920x1080) и частотой обновления 60 Гц. Подходит для базовых игр и офисных задач.</description>
+    <characteristics>
+      <characteristic>Серия: VP228HE</characteristic>
+      <characteristic>Диагональ экрана: 21.5"</characteristic>
+      <characteristic>Тип экрана: TN</characteristic>
+      <characteristic>Разрешение экрана: 1920x1080</characteristic>
+      <characteristic>Частота кадров: 60 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>5</id>
+    <name>Телевизор LG</name>
+    <price>3000 BYN</price>
+    <image>assets/img/png/ТелевизорLG.png</image>
+    <description>55-дюймовый 4K UHD телевизор LG с процессором α5 Gen3, поддержкой HDR и Smart TV на webOS. Тонкий дизайн и реалистичное изображение.</description>
+    <characteristics>
+      <characteristic>Серия: UT8100</characteristic>
+      <characteristic>Диагональ экрана: 55"</characteristic>
+      <characteristic>Тип экрана: LED</characteristic>
+      <characteristic>Разрешение экрана: 3840x2160</characteristic>
+      <characteristic>Частота кадров: 60 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>6</id>
+    <name>Телевизор Samsung</name>
+    <price>2500 BYN</price>
+    <image>assets/img/png/ТелевизорSAMSUNG.png</image>
+    <description>50-дюймовый 4K UHD телевизор Samsung с процессором Crystal 4K, HDR и Smart TV на Tizen OS. Четкое изображение и широкие возможности для развлечений.</description>
+    <characteristics>
+      <characteristic>Серия: DU7100</characteristic>
+      <characteristic>Диагональ экрана: 50"</characteristic>
+      <characteristic>Тип экрана: LED</characteristic>
+      <characteristic>Разрешение экрана: 3840x2160</characteristic>
+      <characteristic>Частота кадров: 60 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>7</id>
+    <name>Телевизор Hisense</name>
+    <price>1800 BYN</price>
+    <image>assets/img/png/ТелевизорHISENSE.png</image>
+    <description>40-дюймовый Full HD телевизор Hisense с Smart TV на VIDAA U5, HDR и встроенным медиаплеером. Компактный и функциональный.</description>
+    <characteristics>
+      <characteristic>Серия: A5KQ</characteristic>
+      <characteristic>Диагональ экрана: 32"</characteristic>
+      <characteristic>Тип экрана: LED</characteristic>
+      <characteristic>Разрешение экрана: 1920x1080</characteristic>
+      <characteristic>Частота кадров: 60 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>8</id>
+    <name>Монитор Razer</name>
+    <price>3200 BYN</price>
+    <image>assets/img/png/МониторRAZER.png</image>
+    <description>Игровой монитор Razer Raptor 27" с IPS-матрицей, разрешением 2560x1440 (WQHD), частотой 144 Гц и поддержкой NVIDIA G-Sync Compatible. Стильный дизайн с RGB-подсветкой Chroma.</description>
+    <characteristics>
+      <characteristic>Серия: Raptor 27</characteristic>
+      <characteristic>Диагональ экрана: 27"</characteristic>
+      <characteristic>Тип экрана: IPS</characteristic>
+      <characteristic>Разрешение экрана: 2560x1440</characteristic>
+      <characteristic>Частота кадров: 144 Гц</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>9</id>
+    <name>Наушнки HyperX</name>
+    <price>330 BYN</price>
+    <image>assets/img/png/НаушникиHYPERX.png</image>
+    <description>Участвуйте в игровых сессиях, не задумываясь о подзарядке, и наслаждайтесь каждой минутой игры с беспроводной гарнитурой Cloud Alpha Wireless.</description>
+    <characteristics>
+    <characteristic>Серия: Cloud II</characteristic>
+      <characteristic>Тип излучателя: динамический</characteristic>
+      <characteristic>Низ диапазона: 50 Гц</characteristic>
+      <characteristic>Верх диапазона: 18 000 Гц</characteristic>
+      <characteristic>Чувствительность: 98 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>10</id>
+    <name>Наушники Logitech</name>
+    <price>400 BYN</price>
+    <image>assets/img/png/НаушникиLOGITECH.png</image>
+    <description>Беспроводные игровые наушники с RGB-подсветкой и продвинутым аудиоформатом для полного погружения в игру.</description>
+    <characteristics>
+        <characteristic>Серия: G733</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 20 Гц</characteristic>
+        <characteristic>Верх диапазона: 20 000 Гц</characteristic>
+        <characteristic>Чувствительность: 91 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>11</id>
+    <name>Наушники Apple</name>
+    <price>1500 BYN</price>
+    <image>assets/img/png/НаушникиApple.png</image>
+    <description>Премиальные наушники с адаптивным шумоподавлением, пространственным аудио и премиальным дизайном.</description>
+    <characteristics>
+        <characteristic>Серия: AirPods</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 10 Гц</characteristic>
+        <characteristic>Верх диапазона: 25 000 Гц</characteristic>
+        <characteristic>Чувствительность: 94 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>12</id>
+    <name>Наушники Sony</name>
+    <price>550 BYN</price>
+    <image>assets/img/png/НаушникиSONY.png</image>
+    <description>Беспроводные наушники с активным шумоподавлением и 35-часовой работой от одного заряда.</description>
+    <characteristics>
+        <characteristic>Серия: WH-CH633</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 10 Гц</characteristic>
+        <characteristic>Верх диапазона: 22 000 Гц</characteristic>
+        <characteristic>Чувствительность: 98 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>13</id>
+    <name>Наушники Razer</name>
+    <price>350 BYN</price>
+    <image>assets/img/png/НаушникиRAZER.png</image>
+    <description>Игровая гарнитура с виртуальным объемным звуком 7.1 и охлаждающими амбушюрами из геля.</description>
+    <characteristics>
+        <characteristic>Серия: Kraken</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 12 Гц</characteristic>
+        <characteristic>Верх диапазона: 28 000 Гц</characteristic>
+        <characteristic>Чувствительность: 109 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>14</id>
+    <name>Наушники Beyerdynamic</name>
+    <price>700 BYN</price>
+    <image>assets/img/png/НаушникиDT900.png</image>
+    <description>Студийные наушники открытого типа с детальным звучанием для профессионалов.</description>
+    <characteristics>
+        <characteristic>Серия: DT 900 Pro</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 5 Гц</characteristic>
+        <characteristic>Верх диапазона: 35 000 Гц</characteristic>
+        <characteristic>Чувствительность: 96 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>15</id>
+    <name>Наушники Marshall</name>
+    <price>450 BYN</price>
+    <image>assets/img/png/НаушникиMARSHALL.png</image>
+    <description>Беспроводные наушники в ретро-стиле с 80-часовым временем работы и быстрой зарядкой.</description>
+    <characteristics>
+        <characteristic>Серия: Major 4</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 20 Гц</characteristic>
+        <characteristic>Верх диапазона: 20 000 Гц</characteristic>
+        <characteristic>Чувствительность: 99 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>16</id>
+    <name>Наушники Havit</name>
+    <price>300 BYN</price>
+    <image>assets/img/png/НаушникHAVIT.png</image>
+    <description>Беспроводная гарнитура с шумоподавляющим микрофоном и поддержкой Dolby Audio.</description>
+    <characteristics>
+        <characteristic>Серия: H890</characteristic>
+        <characteristic>Тип излучателя: динамический</characteristic>
+        <characteristic>Низ диапазона: 20 Гц</characteristic>
+        <characteristic>Верх диапазона: 20 000 Гц</characteristic>
+        <characteristic>Чувствительность: 93 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>17</id>
+    <name>Микрофон HyperX</name>
+    <price>910 BYN</price>
+    <image>assets/img/png/МикрофонHyperX2.png</image>
+    <description>HyperX QuadCast™ — это полнофункциональный автономный микрофон, который идеально подходит для начинающих стримеров или подкастеров, которым необходим конденсаторный микрофон с высоким качеством звука.</description>
+    <characteristics>
+        <characteristic>Серия: QuadCast</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц</characteristic>
+        <characteristic>Разрядность: 16 бит</characteristic>
+        <characteristic>Коэффициент искажений: = 0,05%</characteristic>
+        <characteristic>Чувствительность: -36 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>18</id>
+    <name>Микрофон Behringer</name>
+    <price>620 BYN</price>
+    <image>assets/img/png/МикрофонBehringer.png</image>
+    <description>Конденсаторный студийный микрофон с большой диафрагмой для записи вокала и акустических инструментов.</description>
+    <characteristics>
+        <characteristic>Серия: C-1</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц</characteristic>
+        <characteristic>Разрядность: 24 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.5%</characteristic>
+        <characteristic>Чувствительность: -38 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>19</id>
+    <name>Микрофон HyperX</name>
+    <price>280 BYN</price>
+    <image>assets/img/png/МикрофонHyperX1.png</image>
+    <description>Компактный USB-микрофон с подсветкой и встроенной защитой от вибраций для стримеров и подкастеров.</description>
+    <characteristics>
+        <characteristic>Серия: Solocast</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц</characteristic>
+        <characteristic>Разрядность: 16 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 1%</characteristic>
+        <characteristic>Чувствительность: -34 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>20</id>
+    <name>Микрофон Razer</name>
+    <price>600 BYN</price>
+    <image>assets/img/png/МикрофонRazer2.png</image>
+    <description>Профессиональный USB-микрофон с RGB-подсветкой, цифровым микшером и функцией шумоподавления.</description>
+    <characteristics>
+        <characteristic>Серия: Seiren V3</characteristic>
+        <characteristic>Частота дискретизации: 96 кГц</characteristic>
+        <characteristic>Разрядность: 24 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.1%</characteristic>
+        <characteristic>Чувствительность: -32 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>21</id>
+    <name>Микрофон Razer</name>
+    <price>400 BYN</price>
+    <image>assets/img/png/МикрофонRazer1.png</image>
+    <description>Компактный USB-микрофон с суперкардиоидной диаграммой направленности для четкой записи голоса.</description>
+    <characteristics>
+        <characteristic>Серия: Seiren X</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц</characteristic>
+        <characteristic>Разрядность: 16 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.5%</characteristic>
+        <characteristic>Чувствительность: -36 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>22</id>
+    <name>Микрофон Maono</name>
+    <price>350 BYN</price>
+    <image>assets/img/png/МикрофонMaono.png</image>
+    <description>USB/XLR гибридный микрофон с сенсорным управлением и 3 режимами полярности для гибкой настройки.</description>
+    <characteristics>
+        <characteristic>Серия: D30</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц</characteristic>
+        <characteristic>Разрядность: 24 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.8%</characteristic>
+        <characteristic>Чувствительность: -33 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>23</id>
+    <name>Микрофон Shure</name>
+    <price>3200 BYN</price>
+    <image>assets/img/png/МикрофонShure.png</image>
+    <description>Легендарный динамический микрофон для студийной записи вокала, подкастов и озвучки.</description>
+    <characteristics>
+        <characteristic>Серия: SM7B</characteristic>
+        <characteristic>Частота дискретизации: Аналоговый (XLR)</characteristic>
+        <characteristic>Разрядность: -</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.5%</characteristic>
+        <characteristic>Чувствительность: -59 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>24</id>
+    <name>Микрофон Audio-Technica</name>
+    <price>750 BYN</price>
+    <image>assets/img/png/МикрофонAudio-Technica.png</image>
+    <description>Конденсаторный микрофон с кардиоидной диаграммой для профессиональной записи вокала и инструментов.</description>
+    <characteristics>
+        <characteristic>Серия: AT2020</characteristic>
+        <characteristic>Частота дискретизации: 48 кГц (USB-версия)</characteristic>
+        <characteristic>Разрядность: 16 бит</characteristic>
+        <characteristic>Коэффициент искажений: ≤ 0.5%</characteristic>
+        <characteristic>Чувствительность: -37 дБ</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>25</id>
+    <name>Камера Sony</name>
+    <price>750 BYN</price>
+    <image>assets/img/png/КамераSony6.png</image>
+    <description>Камера A6700 объединяет новейшую технологию ИИ и высочайшее качество изображений серии α Sony в компактном корпусе APS-C. Благодаря улучшенному распознаванию объектов, новейшей технологии съемки фото и видео и совместимости с объективами с байонетом E легкая камера α6700 подходит для творчества в любое время и в любом месте.</description>
+    <characteristics>
+        <characteristic>Серия: A6700</characteristic>
+        <characteristic>Тип камеры: беззеркальная камера</characteristic>
+        <characteristic>Тип матрицы: APS-C</characteristic>
+        <characteristic>Разрешение видео: 3840 × 2160</characteristic>
+        <characteristic>Количество кадров в секунду: 120p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>26</id>
+    <name>Экшн-камера GoPro</name>
+    <price>500 BYN</price>
+    <image>assets/img/png/GoPro.png</image>
+    <description>Экшн-камера с улучшенной стабилизацией HyperSmooth 6.0, поддержкой видео 5.3K и водонепроницаемым корпусом.</description>
+    <characteristics>
+        <characteristic>Серия: Hero 12</characteristic>
+        <characteristic>Тип камеры: экшн-камера</characteristic>
+        <characteristic>Тип матрицы: 1/1.9"</characteristic>
+        <characteristic>Разрешение видео: 5312 × 2988</characteristic>
+        <characteristic>Количество кадров в секунду: 240p (в HD)</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>27</id>
+    <name>Камера Sony</name>
+    <price>2500 BYN</price>
+    <image>assets/img/png/КамераSony2.png</image>
+    <description>Беззеркальная камера для видеоблогинга с автофокусом Real-time Eye AF и поворотным сенсорным экраном.</description>
+    <characteristics>
+        <characteristic>Серия: ZV-E10</characteristic>
+        <characteristic>Тип камеры: беззеркальная</characteristic>
+        <characteristic>Тип матрицы: APS-C</characteristic>
+        <characteristic>Разрешение видео: 3840 × 2160</characteristic>
+        <characteristic>Количество кадров в секунду: 120p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>28</id>
+    <name>Экшн-камера Sony</name>
+    <price>700 BYN</price>
+    <image>assets/img/png/КамераSony1.png</image>
+    <description>Экшн-камера с защищенным корпусом, электронной стабилизацией SteadyShot и Wi-Fi-управлением.</description>
+    <characteristics>
+        <characteristic>Серия: HDR-AS300</characteristic>
+        <characteristic>Тип камеры: экшн-камера</characteristic>
+        <characteristic>Тип матрицы: Exmor R</characteristic>
+        <characteristic>Разрешение видео: 1920 × 1080</characteristic>
+        <characteristic>Количество кадров в секунду: 60p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>29</id>
+    <name>"Экшн-камераамера DJI</name>
+    <price>600 BYN</price>
+    <image>assets/img/png/КамераDJI.png</image>
+    <description>Компактная портативная камера с 3-осевым стабилизатором и 1-дюймовым сенсором для съемки в движении.</description>
+    <characteristics>
+        <characteristic>Серия:  Osmo Pocket 3</characteristic>
+        <characteristic>Тип камеры: компактная</characteristic>
+        <characteristic>Тип матрицы: 1"</characteristic>
+        <characteristic>Разрешение видео: 3840 × 2160</characteristic>
+        <characteristic>Количество кадров в секунду: 120p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>30</id>
+    <name>Камера Sony</name>
+    <price>450 BYN</price>
+    <image>assets/img/png/КамераSony4.png</image>
+    <description>Компактная цифровая камера с 35-кратным оптическим зумом и функцией съемки HD-видео.</description>
+    <characteristics>
+        <characteristic>Серия: DSC-H300</characteristic>
+        <characteristic>Тип камеры: компактная</characteristic>
+        <characteristic>Тип матрицы: 1/2.3"</characteristic>
+        <characteristic>Разрешение видео: 1280 × 720</characteristic>
+        <characteristic>Количество кадров в секунду: 30p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>31</id>
+    <name>Камера Sony</name>
+    <price>2000 BYN</price>
+    <image>assets/img/png/КамераSony3.png</image>
+    <description>Компактная камера для видеоблогинга с быстрым автофокусом, встроенным ND-фильтром и направленным микрофоном.</description>
+    <characteristics>
+        <characteristic>Серия: ZV-1</characteristic>
+        <characteristic>Тип камеры: компактная</characteristic>
+        <characteristic>Тип матрицы: 1"</characteristic>
+        <characteristic>Разрешение видео: 3840 × 2160</characteristic>
+        <characteristic>Количество кадров в секунду: 30p</characteristic>
+    </characteristics>
+</product>
+
+<product>
+    <id>32</id>
+    <name>Камера Sony</name>
+    <price>7000 BYN</price>
+    <image>assets/img/png/КамераSony5.png</image>
+    <description>Флагманская беззеркальная камера с полнокадровой матрицей 33 Мп, 4K-видео и продвинутой автофокусировкой.</description>
+    <characteristics>
+        <characteristic>Серия: Alpha 7 IV</characteristic>
+        <characteristic>Тип камеры: беззеркальная</characteristic>
+        <characteristic>Тип матрицы: полнокадровая</characteristic>
+        <characteristic>Разрешение видео: 3840 × 2160</characteristic>
+        <characteristic>Количество кадров в секунду: 60p</characteristic>
+    </characteristics>
+</product>
+
+  </products>
