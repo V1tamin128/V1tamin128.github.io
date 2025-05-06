@@ -1,0 +1,355 @@
+@import "basic";
+ 
+.main {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f2f2f2;
+  }
+  
+  .cart-container {
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 5px #0000007e;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .cart-item-img {
+    width: 120px;
+    height: 120px;
+    margin-right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        }
+}
+  
+  .cart-item-info {
+    flex-grow: 1;
+  }
+  
+  .cart-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+
+  }
+  
+  .cart-item-price {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+  }
+  
+  .remove-item-btn, .checkout-item-btn {
+    width: 20%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .remove-item-btn {
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+  }
+  .remove-item-btn:hover {
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .checkout-item-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+  }
+  
+  .checkout-item-btn:hover {
+    opacity: 0.5;
+  }
+  
+  .cart-item-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .select-item {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  
+  .summary-total {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2% 0;
+  }
+  
+  .summ1{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .summ2{
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .summ2:hover{
+    opacity: 0.5;
+  }
+
+
+@media (min-width: 600px) and (max-width: 800px){
+    .cart-container {
+      
+      .cart-items {
+        gap: 20px;
+      }
+      
+      .cart-item {
+        border-radius: 15px;
+        padding: 15px;
+      }
+      
+      .cart-item-img {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+    }
+      
+      .cart-item-info {
+        flex-grow: 1;
+      }
+      
+      .cart-item-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    
+      }
+      
+      .cart-item-price {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      
+      .item-actions {
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .remove-item-btn, .checkout-item-btn {
+        width: 22%;
+        padding: 8px;
+        border-radius: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .cart-item-actions {
+        top: 15px;
+        right: 15px;
+      }
+      
+      .summ1{
+        padding: 10px;
+        border-radius: 30px;
+        font-size: 15px;
+      }
+    
+      .summ2{
+        padding: 10px;
+        border-radius: 26px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+}
+}
+  
+@media (min-width: 450px) and (max-width: 600px){
+    .cart-container {
+
+      .cart-items {
+        gap: 15px;
+      }
+      
+      .cart-item {
+        border-radius: 15px;
+        padding: 15px;
+      }
+      
+      .cart-item-img {
+        width: 90px;
+        height: 90px;
+        padding: 5px;
+    }
+      
+      .cart-item-info {
+        flex-grow: 1;
+      }
+      
+      .cart-item-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    
+      }
+      
+      .cart-item-price {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      
+      .item-actions {
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .remove-item-btn, .checkout-item-btn {
+        width: 24%;
+        padding: 8px;
+        border-radius: 20px;
+        font-size: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .cart-item-actions {
+        top: 15px;
+        right: 15px;
+      }
+      
+      .summ1{
+        padding: 8px;
+        border-radius: 30px;
+        font-size: 13px;
+      }
+    
+      .summ2{
+        padding: 8px;
+        border-radius: 26px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+}
+}
+
+@media (max-width: 450px){
+    .cart-container {
+
+      .cart-items {
+        gap: 12px;
+      }
+      
+      .cart-item {
+        border-radius: 10px;
+        padding: 10px;
+      }
+      
+      .cart-item-img {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+    }
+      
+      .cart-item-info {
+        flex-grow: 1;
+      }
+      
+      .cart-item-title {
+        font-size: 12px;
+        margin-bottom: 7px;
+    
+      }
+      
+      .cart-item-price {
+        font-size: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .item-actions {
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .remove-item-btn, .checkout-item-btn {
+        width: 28%;
+        padding: 6px;
+        border-radius: 20px;
+        font-size: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .cart-item-actions {
+        top: 20px;
+        right: 15px;
+      }
+      
+      .summ1{
+        padding: 8px;
+        border-radius: 30px;
+        font-size: 10px;
+      }
+    
+      .summ2{
+        padding: 8px;
+        border-radius: 26px;
+        font-size: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+}
+}

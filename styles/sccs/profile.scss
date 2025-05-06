@@ -1,0 +1,402 @@
+@import "basic";
+
+.main{
+    .profile {
+        margin: 2% 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        min-height: 400px;
+        height: 90%;
+
+        .profile__icon {
+          display: flex;
+          width: 25%;
+          background-color: #fff;
+          border-radius: 16px;
+          img{
+            width: 100%;
+
+          }
+        }
+      
+        .profile__info {
+          display: flex;
+          flex-direction: column; 
+          width: 50%; 
+          background-color: #fff;
+          border-radius: 16px; 
+          padding: 3rem; 
+      
+          .info__form {
+            width: 100%; 
+            
+            .form {
+              display: flex;
+              flex-direction: column;
+        .name, .surname, .email{
+            p{
+                margin: 0.5% 0;
+            }
+        }
+              
+              #name, #surname, #email {
+                width: 100%; 
+                max-width: 700px; 
+                padding: 2% 4%; 
+                height: 40px;
+                background-color: #dcdcdc;
+                border: none;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+                font-size: 16px;
+                
+              }
+            }
+          }
+      
+          .info__send {
+            align-self: flex-end;
+            .button {
+                margin-top: 20%;
+              width: 200px; 
+              padding: 15px 0; 
+              font-family: "Montserrat";
+              color: #fff;
+              font-size: 16px;
+              font-weight: 500;
+              background-color: #000;
+              border: none;
+              border-radius: 22px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              
+              &:hover {
+                background-color: #fff;
+                color: #000;
+                width: 202px;
+                border: 1px solid #000;
+              }
+              
+              &:active {
+                background-color: #777777;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+.button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: #333;
+  color: #fff;
+}
+}
+@media(min-width: 600px) and (max-width:800px){
+.main{
+    .profile {
+        margin: 2% 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 80%;
+
+        .profile__icon {
+          display: flex;
+          width: 25%;
+          height: 200px;
+          background-color: #fff;
+          border-radius: 10%;
+          img{
+            align-self: center;
+            width: 80%;
+            height: 200px;
+
+          }
+        }
+      
+        .profile__info {
+          display: flex;
+          flex-direction: column; 
+          width: 50%; 
+          height: 200px;
+          background-color: #fff;
+          border-radius: 16px;
+          padding: 15px; 
+      
+          .info__form {
+            width: 100%; 
+            
+            .form {
+              display: flex;
+              flex-direction: column;
+        .name, .surname, .email{
+            p{
+              font-size: 12px;
+                margin: 0.5% 0;
+            }
+        }
+              
+              #name, #surname, #email {
+                width: 100%; 
+                padding: 3.5% 2%; 
+                height: 10px;
+                background-color: #dcdcdc;
+                border: none;
+                border-radius: 12 px;
+                transition: all 0.3s ease;
+                font-size: 10px;
+                
+              }
+            }
+          }
+      
+          .info__send {
+            align-self: flex-end;
+            .button {
+                margin-top: 15%;
+              width: 90px; 
+              padding: 7px 0; 
+              font-family: "Montserrat";
+              color: #fff;
+              font-size: 12px;
+              font-weight: 500;
+              background-color: #000;
+              border: none;
+              border-radius: 22px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              
+              &:hover {
+                background-color: #fff;
+                color: #000;
+                width: 202px;
+                border: 1px solid #000;
+              }
+              
+              &:active {
+                background-color: #777777;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+.button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: #333;
+  color: #fff;
+}
+}
+}
+
+
+@media(min-width: 450px) and (max-width:600px){
+  .main{
+      .profile {
+          margin: 2% 0;
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          height: 80%;
+  
+          .profile__icon {
+            display: flex;
+            width: 25%;
+            height: 170px;
+            background-color: #fff;
+            border-radius: 10%;
+            img{
+              align-self: center;
+              width: 80%;
+              height: 170px;
+  
+            }
+          }
+        
+          .profile__info {
+            display: flex;
+            flex-direction: column; 
+            width: 50%; 
+            height: 170px;
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 10px; 
+        
+            .info__form {
+              width: 100%; 
+              
+              .form {
+                display: flex;
+                flex-direction: column;
+          .name, .surname, .email{
+              p{
+                font-size: 10px;
+                  margin: 0.5% 0;
+              }
+          }
+                
+                #name, #surname, #email {
+                  width: 100%; 
+                  padding: 4%; 
+                  height: 10px;
+                  background-color: #dcdcdc;
+                  border: none;
+                  border-radius: 8px;
+                  transition: all 0.3s ease;
+                  font-size: 10px;
+                  
+                }
+              }
+            }
+        
+            .info__send {
+              align-self: flex-end;
+              .button {
+                  margin-top: 15%;
+                width: 70px; 
+                padding: 5px 0; 
+                font-family: "Montserrat";
+                color: #fff;
+                font-size: 10px;
+                font-weight: 500;
+                background-color: #000;
+                border: none;
+                border-radius: 22px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                
+                &:hover {
+                  background-color: #fff;
+                  color: #000;
+                  width: 202px;
+                  border: 1px solid #000;
+                }
+                
+                &:active {
+                  background-color: #777777;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+  .button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  }
+  }
+  
+
+  @media(max-width:450px){
+    .main{
+        .profile {
+            margin: 2% 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 80%;
+    
+            .profile__icon {
+              display: flex;
+              width: 25%;
+              height: 140px;
+              background-color: #fff;
+              border-radius: 10%;
+              img{
+                align-self: center;
+                width: 80%;
+                height: 140px;
+    
+              }
+            }
+          
+            .profile__info {
+              display: flex;
+              flex-direction: column; 
+              width: 50%; 
+              height: 140px;
+              background-color: #fff;
+              border-radius: 16px;
+              padding: 10px; 
+          
+              .info__form {
+                width: 100%; 
+                
+                .form {
+                  display: flex;
+                  flex-direction: column;
+            .name, .surname, .email{
+                p{
+                  font-size: 8px;
+                    margin: 0.5% 0;
+                }
+            }
+                  
+                  #name, #surname, #email {
+                    width: 100%; 
+                    padding: 4%; 
+                    height: 10px;
+                    background-color: #dcdcdc;
+                    border: none;
+                    border-radius: 5px;
+                    transition: all 0.3s ease;
+                    font-size: 10px;
+                    
+                  }
+                }
+              }
+          
+              .info__send {
+                align-self: flex-end;
+                .button {
+                    margin-top: 15%;
+                  width: 50px; 
+                  padding: 3px 0; 
+                  font-family: "Montserrat";
+                  color: #fff;
+                  font-size: 8px;
+                  font-weight: 500;
+                  background-color: #000;
+                  border: none;
+                  border-radius: 22px;
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  
+                  &:hover {
+                    background-color: #fff;
+                    color: #000;
+                    width: 202px;
+                    border: 1px solid #000;
+                  }
+                  
+                  &:active {
+                    background-color: #777777;
+                    border: none;
+                  }
+                }
+              }
+            }
+          }
+    .button {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    }
+    }
+    
