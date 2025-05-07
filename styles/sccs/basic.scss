@@ -230,16 +230,17 @@
     margin-left: 2%;
     flex: 1 1 10px; 
     display: flex;
+    flex-direction: column;
     transition: all 0.2s ease;
     p{  
         font-size: 10px;
     }
-    .logo__img{
+    .logo__svg{
       transition: all 0.2s ease;
         margin: 0;
     }
 }
-.logo__img:hover{
+.logo__svg:hover{
   opacity: 0.3;
 }
 .footer__menu {
@@ -250,7 +251,7 @@
 }
 
 .footer__menu-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     margin-bottom: 2px;
 }
@@ -288,7 +289,7 @@
 
 
 
-@media(max-width:630px){
+@media(min-width:530px) and (max-width:920px){
   .footer {
     background-color: #ede9e9;
     border-top: 2px solid #a3a1a1;
@@ -305,7 +306,7 @@
     flex: 1 1 10px; 
     display: flex;
     p{  
-        font-size: 6px;
+        font-size: 9px;
     }
     .logo__img{
       width: 60%;
@@ -347,6 +348,112 @@
 }
 
 }
+}
+@media(min-width:340px) and (max-width:530px){
+  .footer {
+    background-color: #ede9e9;
+    border-top: 2px solid #a3a1a1;
+    padding: 5px 0;
+
+.footer__logo {
+    margin-left: 2%;
+    display: flex;
+    p{  
+        font-size: 4.5px;
+    }
+    .logo__svg{
+      width: 80px;
+      height: 22px;
+        margin: 0;
+    }
+}
+.footer__menu {
+  margin-top: 1%;
+  flex-basis: 75%;
+  gap: 4%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__menu-title {
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 0px;
+}
+.footer__menu-item{
+  padding-top: 0px;
+}
+.footer__menu-item + .footer__menu-item {
+    padding-top: 5px;
+    font-size: 9px;
+}
+.app {
+    display: flex;
+    flex: 1 1 100%; 
+    gap:10px;
+    margin-top: 10px;
+    justify-content: flex-end;  
+}
+.app__item-link {
+    transition: all 0.3s ease;
+    svg{
+      width: 30px;
+      height: 30px;
+    }
+}
+}
+} 
+@media(max-width:340px){
+  .footer {
+    background-color: #ede9e9;
+    border-top: 2px solid #a3a1a1;
+    padding: 5px 0;
+
+.footer__logo {
+    margin-left: 2%;
+    display: flex;
+    p{  
+        font-size: 4.5px;
+    }
+    .logo__svg{
+      width: 80px;
+      height: 22px;
+        margin: 0;
+    }
+}
+.footer__menu {
+  padding-left: 2%;
+  margin-top: 1%;
+  flex-basis: 100%;
+  gap: 7%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__menu-title {
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 0px;
+}
+.footer__menu-item + .footer__menu-item {
+  padding-top: 5px;
+  font-size: 9px;
+}
+.app {
+  display: flex;
+  flex: 1 1 100%; 
+  gap:10px;
+  margin-top: 10px;
+  justify-content: flex-end;  
+}
+.app__item-link {
+  transition: all 0.3s ease;
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+}
+} 
 }
 
 // Смотрите другие товары

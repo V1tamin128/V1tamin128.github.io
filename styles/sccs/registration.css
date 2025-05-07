@@ -91,7 +91,7 @@ body {
   width: 35px;
 }
 
-.source__items img:hover {
+.source__items svg:hover {
   opacity: 0.5;
 }
 
@@ -149,15 +149,15 @@ body {
 
 /* Мобильная версия */
 @media (max-width: 710px) {
-  svg {
-    width: 40px;
-    height: 40px;
-    color: #fff;
-  }
   .burger-menu__btn {
     display: block;
     transition: transform 0.4s ease;
     z-index: 3;
+  }
+  .burger-menu__btn svg {
+    width: 40px;
+    height: 40px;
+    color: #fff;
   }
   .burger-menu__btn:active {
     transform: rotate(100deg);
@@ -224,16 +224,17 @@ body {
   margin-left: 2%;
   flex: 1 1 10px;
   display: flex;
+  flex-direction: column;
   transition: all 0.2s ease;
 }
 .footer .footer__logo p {
   font-size: 10px;
 }
-.footer .footer__logo .logo__img {
+.footer .footer__logo .logo__svg {
   transition: all 0.2s ease;
   margin: 0;
 }
-.footer .logo__img:hover {
+.footer .logo__svg:hover {
   opacity: 0.3;
 }
 .footer .footer__menu {
@@ -243,7 +244,7 @@ body {
   flex-wrap: wrap;
 }
 .footer .footer__menu-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 900;
   margin-bottom: 2px;
 }
@@ -276,7 +277,7 @@ body {
   opacity: 0.3;
 }
 
-@media (max-width: 630px) {
+@media (min-width: 530px) and (max-width: 920px) {
   .footer {
     background-color: #ede9e9;
     border-top: 2px solid #a3a1a1;
@@ -294,7 +295,7 @@ body {
     display: flex;
   }
   .footer .footer__logo p {
-    font-size: 6px;
+    font-size: 9px;
   }
   .footer .footer__logo .logo__img {
     width: 60%;
@@ -329,8 +330,110 @@ body {
   .footer .app__item-link {
     transition: all 0.3s ease;
   }
-  .footer .app__item-link img {
+  .footer .app__item-link svg {
     width: 40px;
+  }
+}
+@media (min-width: 340px) and (max-width: 530px) {
+  .footer {
+    background-color: #ede9e9;
+    border-top: 2px solid #a3a1a1;
+    padding: 5px 0;
+  }
+  .footer .footer__logo {
+    margin-left: 2%;
+    display: flex;
+  }
+  .footer .footer__logo p {
+    font-size: 4.5px;
+  }
+  .footer .footer__logo .logo__svg {
+    width: 80px;
+    height: 22px;
+    margin: 0;
+  }
+  .footer .footer__menu {
+    margin-top: 1%;
+    flex-basis: 75%;
+    gap: 4%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer .footer__menu-title {
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 0px;
+  }
+  .footer .footer__menu-item {
+    padding-top: 0px;
+  }
+  .footer .footer__menu-item + .footer__menu-item {
+    padding-top: 5px;
+    font-size: 9px;
+  }
+  .footer .app {
+    display: flex;
+    flex: 1 1 100%;
+    gap: 10px;
+    margin-top: 5px;
+    justify-content: flex-end;
+  }
+  .footer .app__item-link {
+    transition: all 0.3s ease;
+  }
+  .footer .app__item-link svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 340px) {
+  .footer {
+    background-color: #ede9e9;
+    border-top: 2px solid #a3a1a1;
+    padding: 5px 0;
+  }
+  .footer .footer__logo {
+    margin-left: 2%;
+    display: flex;
+  }
+  .footer .footer__logo p {
+    font-size: 4.5px;
+  }
+  .footer .footer__logo .logo__svg {
+    width: 80px;
+    height: 22px;
+    margin: 0;
+  }
+  .footer .footer__menu {
+    padding-left: 2%;
+    margin-top: 1%;
+    flex-basis: 100%;
+    gap: 7%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer .footer__menu-title {
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 0px;
+  }
+  .footer .footer__menu-item + .footer__menu-item {
+    padding-top: 5px;
+    font-size: 9px;
+  }
+  .footer .app {
+    display: flex;
+    flex: 1 1 100%;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+  .footer .app__item-link {
+    transition: all 0.3s ease;
+  }
+  .footer .app__item-link svg {
+    width: 30px;
+    height: 30px;
   }
 }
 .other__goods {
@@ -804,7 +907,7 @@ body {
   display: flex;
   justify-content: center;
   font-weight: 900;
-  font-size: 35px;
+  font-size: 32px;
 }
 .main .main__reg {
   margin: 3% 0;
@@ -825,16 +928,17 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.main .main__reg .main__form .name, .main .main__reg .main__form .surname, .main .main__reg .main__form .email, .main .main__reg .main__form .address, .main .main__reg .main__form .button {
+.main .main__reg .main__form .name, .main .main__reg .main__form .surname, .main .main__reg .main__form .email, .main .main__reg .main__form .address, .main .main__reg .main__form .button, .main .main__reg .main__form .number-card, .main .main__reg .main__form .name-card {
   width: 100%;
   margin-top: 5%;
 }
-.main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p {
+.main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p, .main .main__reg .main__form .number-card p, .main .main__reg .main__form .name-card p {
+  width: 100%;
   margin: 1% 2%;
   font-size: 20px;
   font-weight: 900;
 }
-.main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address {
+.main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address, .main .main__reg .main__form #cardNumber, .main .main__reg .main__form #cardName {
   width: 100%;
   max-width: 700px;
   padding: 3.5% 4%;
@@ -846,12 +950,63 @@ body {
   font-size: 16px;
   gap: 60%;
 }
-.main .main__reg .main__form .buttons {
+.main .main__reg .main__form h3 {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  margin-top: 20px;
+  font-size: 32px;
+}
+.main .main__reg .main__form .card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.main .main__reg .main__form .card-row .date-card {
+  width: 60%;
+  margin-top: 5%;
+}
+.main .main__reg .main__form .card-row .date-card p {
+  width: 100%;
+  margin: 1% 2%;
+  font-size: 20px;
+  font-weight: 900;
+}
+.main .main__reg .main__form .card-row .date-card #cardDate {
+  width: 100%;
+  padding: 3.5% 4%;
+  background-color: #dcdcdc;
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.main .main__reg .main__form .card-row .cvv-card {
+  width: 35%;
+  margin-top: 5%;
+}
+.main .main__reg .main__form .card-row .cvv-card p {
+  width: 100%;
+  margin: 1% 2%;
+  font-size: 20px;
+  font-weight: 900;
+}
+.main .main__reg .main__form .card-row .cvv-card #cardCVV {
+  width: 100%;
+  padding: 6% 4%;
+  background-color: #dcdcdc;
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.main .main__reg .buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 5%;
 }
-.main .main__reg .main__form .buttons .button1 {
+.main .main__reg .buttons .button1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -869,11 +1024,11 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.main .main__reg .main__form .buttons .button1:hover {
+.main .main__reg .buttons .button1:hover {
   background-color: #000;
   color: #fff;
 }
-.main .main__reg .main__form .buttons .button2 {
+.main .main__reg .buttons .button2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -888,37 +1043,58 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.main .main__reg .main__form .buttons .button2:hover {
+.main .main__reg .buttons .button2:hover {
   background-color: #fff;
   color: #000;
   border: 1.5px solid #000;
 }
 
-@media (min-width: 600px) and (max-width: 800px) {
+@media (min-width: 600px) and (max-width: 900px) {
   .main h3 {
-    font-size: 25px;
+    font-size: 23px;
   }
   .main .main__reg {
     width: 70%;
     border-radius: 30px;
   }
-  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p {
-    font-size: 15px;
+  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p, .main .main__reg .main__form .number-card p, .main .main__reg .main__form .name-card p {
+    font-size: 14px;
   }
-  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address {
+  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address, .main .main__reg .main__form #cardNumber, .main .main__reg .main__form #cardName {
     height: 30px;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: 15px;
   }
   .main .main__reg .main__form .buttons .button1 {
-    padding: 3%;
+    padding: 2%;
     font-size: 12px;
     border-radius: 30px;
   }
   .main .main__reg .main__form .buttons .button2 {
-    padding: 3%;
+    padding: 2%;
     font-size: 12px;
     border-radius: 30px;
+  }
+  .main .main__reg .main__form h3 {
+    font-size: 23px;
+    margin-top: 16px;
+  }
+  .main .main__reg .main__form .card-row .date-card {
+    width: 60%;
+    margin-top: 5%;
+  }
+  .main .main__reg .main__form .card-row .date-card p {
+    font-size: 14px;
+  }
+  .main .main__reg .main__form .card-row .date-card #cardDate {
+    border-radius: 15px;
+    font-size: 15px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card p {
+    font-size: 15px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card #cardCVV {
+    font-size: 15px;
   }
 }
 @media (min-width: 400px) and (max-width: 600px) {
@@ -934,10 +1110,10 @@ body {
   .main .main__reg .main__form {
     width: 95%;
   }
-  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p {
-    font-size: 10px;
+  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p, .main .main__reg .main__form .number-card p, .main .main__reg .main__form .name-card p {
+    font-size: 9px;
   }
-  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address {
+  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address, .main .main__reg .main__form #cardNumber, .main .main__reg .main__form #cardName {
     height: 25px;
     border-radius: 12px;
     font-size: 12px;
@@ -956,6 +1132,27 @@ body {
     font-size: 10px;
     border-radius: 30px;
   }
+  .main .main__reg .main__form h3 {
+    font-size: 15px;
+    margin-top: 14px;
+  }
+  .main .main__reg .main__form .card-row .date-card {
+    width: 60%;
+    margin-top: 5%;
+  }
+  .main .main__reg .main__form .card-row .date-card p {
+    font-size: 9px;
+  }
+  .main .main__reg .main__form .card-row .date-card #cardDate {
+    border-radius: 15px;
+    font-size: 12px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card p {
+    font-size: 9px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card #cardCVV {
+    font-size: 12px;
+  }
 }
 @media (max-width: 400px) {
   .main h3 {
@@ -968,16 +1165,16 @@ body {
     border-radius: 15px;
   }
   .main .main__reg .main__form {
-    height: 300px;
+    height: 100%;
     width: 95%;
   }
-  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p {
+  .main .main__reg .main__form .name p, .main .main__reg .main__form .surname p, .main .main__reg .main__form .email p, .main .main__reg .main__form .address p, .main .main__reg .main__form .button p, .main .main__reg .main__form .number-card p, .main .main__reg .main__form .name-card p {
     font-size: 8px;
   }
-  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address {
+  .main .main__reg .main__form #name, .main .main__reg .main__form #surname, .main .main__reg .main__form #email, .main .main__reg .main__form #address, .main .main__reg .main__form #cardNumber, .main .main__reg .main__form #cardName {
     height: 22px;
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 10px;
   }
   .main .main__reg .main__form .buttons {
     margin-top: 14%;
@@ -992,6 +1189,28 @@ body {
     padding: 2.5%;
     font-size: 9px;
     border-radius: 30px;
+  }
+  .main .main__reg .main__form h3 {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .main .main__reg .main__form .card-row .date-card {
+    width: 60%;
+    margin-top: 5%;
+  }
+  .main .main__reg .main__form .card-row .date-card p {
+    font-size: 8px;
+  }
+  .main .main__reg .main__form .card-row .date-card #cardDate {
+    font-size: 10px;
+    border-radius: 12px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card p {
+    font-size: 8px;
+  }
+  .main .main__reg .main__form .card-row .cvv-card #cardCVV {
+    font-size: 10px;
+    border-radius: 12px;
   }
 }
 .modal {

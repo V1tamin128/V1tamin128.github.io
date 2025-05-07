@@ -7,7 +7,7 @@
         display: flex;
         justify-content: center;
         font-weight: 900;
-        font-size: 35px;
+        font-size: 32px;
 
     }
 .main__reg{
@@ -28,17 +28,18 @@
             flex-direction: column;
             justify-content: center;
         
-      .name, .surname, .email, .address, .button{
+      .name, .surname, .email, .address, .button, .number-card, .name-card{
         width: 100%;
-        margin-top: 5% ;
+        margin-top: 5%;
           p{
+            width: 100%;
               margin: 1% 2%;
               font-size: 20px;
               font-weight: 900;
           }
       }
             
-            #name, #surname, #email, #address {
+            #name, #surname, #email, #address, #cardNumber, #cardName {
               width: 100%; 
               max-width: 700px;
               padding: 3.5% 4%;
@@ -49,6 +50,62 @@
               transition: all 0.3s ease;
               font-size: 16px;
               gap:60%;
+            }
+          
+            h3{
+              display: flex;
+              justify-content: center;
+              font-weight: 900;
+              margin-top: 20px;
+              font-size: 32px;
+      
+          }
+            .card-row {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+          
+              .date-card {
+                  width: 60%;
+                  margin-top: 5%;
+                  p{
+                    width: 100%;
+                      margin: 1% 2%;
+                      font-size: 20px;
+                      font-weight: 900;
+                  }
+                  #cardDate{
+                    width: 100%;
+                    padding: 3.5% 4%;
+                    background-color: #dcdcdc;
+                    border: none;
+                    border-radius: 15px;
+                    transition: all 0.3s ease;
+                    font-size: 16px;
+                  }
+              }
+              .cvv-card {
+                width: 35%;
+                margin-top: 5%;
+                p{
+                  width: 100%;
+                    margin: 1% 2%;
+                    font-size: 20px;
+                    font-weight: 900;
+                }
+                #cardCVV{
+                  width: 100%;
+                    padding:6% 4%;
+                    background-color: #dcdcdc;
+                    border: none;
+                    border-radius: 15px;
+                    transition: all 0.3s ease;
+                    font-size: 16px;
+                }
+              }
+            }
+
             }
             .buttons{
                 display: flex;
@@ -99,41 +156,65 @@
             }
           }
 }
-}
-    
 
 
 
-@media(min-width: 600px) and (max-width: 800px){
+
+@media(min-width: 600px) and (max-width: 900px){
 .main{
     h3{ 
-        font-size: 25px;
+        font-size: 23px;
     }
 .main__reg{
     width: 70%;
     border-radius: 30px; 
     .main__form{
-      .name, .surname, .email, .address, .button{
+      .name, .surname, .email, .address, .button, .number-card, .name-card{
           p{
-              font-size: 15px;
+              font-size: 14px;
           }
       }    
-            #name, #surname, #email, #address {
+            #name, #surname, #email, #address, #cardNumber, #cardName{
               height: 30px;
               border-radius: 12px;
-              font-size: 16px;
+              font-size: 15px;
             }
             .buttons{
             .button1{
-                padding: 3%;
+                padding: 2%;
                 font-size: 12px;
                 border-radius: 30px;            
               }
               .button2{
-                padding: 3%;
+                padding: 2%;
                 font-size: 12px;
                 border-radius: 30px;          
               }
+            }
+            h3{
+              font-size: 23px;
+              margin-top: 16px;
+            }
+            .card-row {          
+              .date-card {
+                  width: 60%;
+                  margin-top: 5%;
+                  p{
+                      font-size: 14px;
+                  }
+                  #cardDate{
+                    border-radius: 15px;
+                    font-size: 15px;
+                  }
+              }
+              .cvv-card {
+                p{
+                    font-size: 15px;
+                }
+                #cardCVV{
+                    font-size: 15px;
+                }
+              }          
             }
           }
      }
@@ -153,12 +234,12 @@
         border-radius: 20px; 
         .main__form{
             width: 95%;
-          .name, .surname, .email, .address, .button{
+          .name, .surname, .email, .address, .button, .number-card, .name-card{
               p{
-                  font-size: 10px;
+                  font-size: 9px;
               }
           }    
-                #name, #surname, #email, #address {
+                #name, #surname, #email, #address, #cardNumber, #cardName{
                   height: 25px;
                   border-radius: 12px;
                   font-size: 12px;
@@ -177,6 +258,31 @@
                     border-radius: 30px;          
                   }
                 }
+                h3{
+                  font-size: 15px;
+                  margin-top: 14px;
+                }
+                .card-row {          
+                  .date-card {
+                      width: 60%;
+                      margin-top: 5%;
+                      p{
+                          font-size: 9px;
+                      }
+                      #cardDate{
+                        border-radius: 15px;
+                        font-size: 12px;
+                      }
+                  }
+                  .cvv-card {
+                    p{
+                        font-size: 9px;
+                    }
+                    #cardCVV{
+                        font-size: 12px;
+                    }
+                  }
+                }
               }
          }
       }
@@ -193,17 +299,17 @@
         padding: 1rem; 
         border-radius: 15px; 
         .main__form{
-            height: 300px;
+            height: 100%;
             width: 95%;
-          .name, .surname, .email, .address, .button{
+          .name, .surname, .email, .address, .button, .number-card, .name-card{
               p{
                   font-size: 8px;
               }
           }    
-                #name, #surname, #email, #address {
+                #name, #surname, #email, #address, #cardNumber, #cardName{
                   height: 22px;
                   border-radius: 12px;
-                  font-size: 12px;
+                  font-size: 10px;
                 }
                 .buttons{
                     margin-top: 14%;
@@ -217,6 +323,32 @@
                     padding: 2.5%;
                     font-size: 9px;
                     border-radius: 30px;          
+                  }
+                }
+                h3{
+                  font-size: 14px;
+                  margin-top: 15px;
+                }
+                .card-row {          
+                  .date-card {
+                      width: 60%;
+                      margin-top: 5%;
+                      p{
+                          font-size: 8px;
+                      }
+                      #cardDate{
+                        font-size: 10px;
+                        border-radius: 12px;
+                      }
+                  }
+                  .cvv-card {
+                    p{
+                        font-size: 8px;
+                    }
+                    #cardCVV{
+                        font-size: 10px;
+                        border-radius: 12px;
+                    }
                   }
                 }
               }

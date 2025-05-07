@@ -291,11 +291,11 @@ font-size: 50px;
   }   
   }
   .main__container-text1 {
-      font-size: 13.5px;
+      font-size: 15px;
       margin-bottom: 10px;
   }
   .main__container-text2 {
-      font-size: 4.7px;
+      font-size: 7px;
   }
       .main__container img {
         max-width: 100%;
@@ -720,6 +720,9 @@ h1{
   overflow: hidden;
   font-size: 12px;
   position: relative; 
+  .block__text{
+    font-size: 15px;
+  }
 }
 .block-1 {
   width: 100%;
