@@ -273,30 +273,157 @@
 
   <script>
     document.getElementById('submitButton').addEventListener('click', function() {
-      // Проверка заполнения полей
-      const inputs = document.querySelectorAll('.main__form input');
+      const fields = {
+        name: {
+          input: document.getElementById('name'),
+          regex: /^[а-яА-ЯёЁ\s]{5,}$/,
+          error: 'Введите корректное ФИО'
+        },
+        phone: {
+          input: document.getElementById('surname'),
+          regex: /^\+375\(\d{2}\)\d{3}-\d{2}-\d{2}$/,
+          error: 'Формат: +375(XX)XXX-XX-XX'
+        },
+        address: {
+          input: document.getElementById('address'),
+          regex: /.{10,}/,
+          error: 'Адрес должен содержать минимум 10 символов'
+        },
+        cardNumber: {
+          input: document.getElementById('cardNumber'),
+          regex: /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/,
+          error: 'Формат: XXXX XXXX XXXX XXXX'
+        },
+        cardName: {
+          input: document.getElementById('cardName'),
+          regex: /^[A-Z]+\s[A-Z]+$/,
+          error: 'Имя латиницей в верхнем регистре'
+        },
+        cardDate: {
+          input: document.getElementById('cardDate'),
+          regex: /^(0[1-9]|1[0-2])\/\d{2}$/,
+          error: 'Формат: ММ/ГГ'
+        },
+        cardCVV: {
+          input: document.getElementById('cardCVV'),
+          regex: /^\d{3}$/,
+          error: '3 цифры'
+        }
+      };
+    
       let isValid = true;
       
-      inputs.forEach(input => {
-        if (!input.value.trim()) {
-          input.style.border = '2px solid red';
-          isValid = false;
-        } else {
-          input.style.border = '';
+      // Сбрасываем стили ошибок
+      Object.values(fields).forEach(({input}) => {
+        input.style.border = '';
+        const errorElement = input.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error-message')) {
+          errorElement.remove();
         }
       });
-      
-      if (isValid) {
-        // Показываем модальное окно
-        document.getElementById('thankYouModal').style.display = 'flex';
+    
+      // Проверка каждого поля
+      for (const [key, {input, regex, error}] of Object.entries(fields)) {
+        const value = input.value.trim();
         
-        // Автоматическое закрытие через 3 секунды
-        setTimeout(function() {
+        if (!value) {
+          showError(input, 'Поле обязательно для заполнения');
+          isValid = false;
+        } else if (!regex.test(value)) {
+          showError(input, error);
+          isValid = false;
+        }
+        
+        // Дополнительная проверка для срока действия карты
+        if (key === 'cardDate' && regex.test(value)) {
+          const [month, year] = value.split('/');
+          const currentYear = new Date().getFullYear() % 100;
+          const currentMonth = new Date().getMonth() + 1;
+          
+          if (year < currentYear || (year == currentYear && month < currentMonth)) {
+            showError(input, 'Срок действия истек');
+            isValid = false;
+          }
+        }
+      }
+    
+      if (isValid) {
+        document.getElementById('thankYouModal').style.display = 'flex';
+        setTimeout(() => {
           document.getElementById('thankYouModal').style.display = 'none';
         }, 3000);
       }
+    
+      function showError(input, message) {
+        input.style.border = '2px solid red';
+        const error = document.createElement('div');
+        error.className = 'error-message';
+        error.style.color = 'red';
+        error.style.fontSize = '0.8em';
+        error.style.marginTop = '5px';
+        error.textContent = message;
+        input.parentNode.insertBefore(error, input.nextSibling);
+      }
     });
-  </script>
+    
+    // Маска для телефона
+    document.getElementById('surname').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.startsWith('375')) value = '+' + value;
+      let formatted = '+375(';
+      
+      if (value.length > 3) {
+        formatted += value.slice(4, 6) + ')';
+        if (value.length > 6) formatted += value.slice(6, 9) + '-';
+        if (value.length > 9) formatted += value.slice(9, 11) + '-';
+        if (value.length > 11) formatted += value.slice(11, 13);
+      }
+      
+      e.target.value = formatted;
+    });
+    
+    // Маска для номера карты
+    document.getElementById('cardNumber').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      let formatted = '';
+      for (let i = 0; i < value.length; i++) {
+        if (i > 0 && i % 4 === 0) formatted += ' ';
+        formatted += value[i];
+      }
+      e.target.value = formatted.slice(0, 19);
+    });
+    
+    // Маска для срока действия
+    document.getElementById('cardDate').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 2) {
+        e.target.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+      } else {
+        e.target.value = value;
+      }
+    });
+    
+    // Маска для CVV
+    document.getElementById('cardCVV').addEventListener('input', function(e) {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 3);
+    });
+    
+    // Маска для имени карты
+    document.getElementById('cardName').addEventListener('input', function(e) {
+      e.target.value = e.target.value.toUpperCase().replace(/[^A-Z\s]/g, '');
+    });
+
+
+
+
+    if (isValid) {
+    document.getElementById('thankYouModal').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('thankYouModal').style.display = 'none';
+        window.location.href = 'profile.html';
+    }, 3000);
+}
+    </script>
     </body>
     </html>
 

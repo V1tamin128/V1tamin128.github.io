@@ -6,7 +6,6 @@
         display: flex;
         justify-content: space-around;
         width: 100%;
-        min-height: 400px;
         height: 90%;
 
         .profile__icon {
@@ -94,6 +93,42 @@
   background-color: #333;
   color: #fff;
 }
+
+.history{
+  display: flex;
+  width: 88%;
+  height: 300px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 10% 6%;
+  h3{
+    width: 100%;
+    font-size: 30px;
+    padding: 1%;
+  }
+
+  .history__items{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .history__items-item{
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      padding: 1%;
+      background-color: #b4b4b4;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 1%;
+    }
+  }
+}
+
 }
 @media(min-width: 600px) and (max-width:800px){
 .main{

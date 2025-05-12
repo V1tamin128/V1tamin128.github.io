@@ -122,6 +122,20 @@
                 </div>
 
             </section>
+            
+            <section class="history">
+                <h3>История заказов</h3>
+                <div class="history__items">
+                  <div class="history__items-item">
+                    <p>Sony 12 12</p>
+                    <p>Цена: 1200 BYn</p>
+                  </div>
+                  <div class="history__items-item">
+                    <p>Sony 12 12</p>
+                    <p>Цена: 1200 BYn</p>
+                  </div>
+                </div>
+            </section>
 
             <section class="other__goods">
 <h3>Смотрите другие товары</h3>
@@ -287,5 +301,33 @@
       e.preventDefault();
       saveProfileData();
     });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    const historyContainer = document.querySelector('.history__items');
+    
+    if (orderHistory.length === 0) {
+        historyContainer.innerHTML = '<p>У вас пока нет заказов</p>';
+        return;
+    }
+    
+    historyContainer.innerHTML = orderHistory.map(order => `
+        <div class="history__order">
+            <h4>Заказ от ${order.date}</h4>
+            <p>Сумма: ${order.total} BYN</p>
+            <div class="order-items">
+                ${order.items.map(item => `
+                    <div class="order-item">
+                        <img src="${item.image}" alt="${item.name}" width="50">
+                        <span>${item.name} - ${item.price} BYN</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+});
   </script>
 </html>

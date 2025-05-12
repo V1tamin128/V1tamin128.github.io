@@ -95,14 +95,13 @@ body {
   opacity: 0.5;
 }
 
-.menu__list-item--dropdown {
+.menu__list-item-dropdown {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -375,7 +374,7 @@ body {
     display: flex;
     flex: 1 1 100%;
     gap: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     justify-content: flex-end;
   }
   .footer .app__item-link {
@@ -592,8 +591,11 @@ body {
   }
 }
 @media (min-width: 650px) and (max-width: 800px) {
+  .main p {
+    font-size: 12px;
+  }
   .main h3 {
-    font-size: 25px;
+    font-size: 16px;
   }
   .main .main__reg {
     width: 70%;
@@ -658,8 +660,11 @@ body {
   }
 }
 @media (min-width: 500px) and (max-width: 650px) {
+  .main p {
+    font-size: 10px;
+  }
   .main h3 {
-    font-size: 15px;
+    font-size: 14px;
   }
   .main .main__reg {
     margin: 10%;
@@ -739,7 +744,7 @@ body {
 }
 @media (min-width: 400px) and (max-width: 500px) {
   .main h3 {
-    font-size: 15px;
+    font-size: 10px;
   }
   .main .main__reg {
     margin: 10%;
@@ -904,7 +909,6 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  min-height: 400px;
   height: 90%;
 }
 .main .profile .profile__icon {
@@ -979,6 +983,39 @@ body {
 .main .button:hover {
   background-color: #333;
   color: #fff;
+}
+.main .history {
+  display: flex;
+  width: 88%;
+  height: 300px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 10% 6%;
+}
+.main .history h3 {
+  width: 100%;
+  font-size: 30px;
+  padding: 1%;
+}
+.main .history .history__items {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .history .history__items .history__items-item {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 1%;
+  background-color: #b4b4b4;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1%;
 }
 
 @media (min-width: 600px) and (max-width: 800px) {

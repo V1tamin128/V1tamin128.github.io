@@ -95,14 +95,13 @@
 }
   }
 //   ВЫПАДАЮЩЕЕ МЕНЮ
-  .menu__list-item--dropdown {
+  .menu__list-item-dropdown {
     position: relative;
   }
   
   .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -645,8 +644,11 @@
 
 @media(min-width: 650px) and (max-width: 800px){
 .main{
+  p{
+    font-size: 12px;
+  }
     h3{ 
-        font-size: 25px;
+        font-size: 16px;
     }
 .main__reg{
     width: 70%;
@@ -728,8 +730,11 @@
 
 @media(min-width: 500px) and (max-width: 650px){
     .main{
+      p{
+        font-size: 10px;
+      }
         h3{ 
-            font-size: 15px;
+            font-size: 14px;
         }
     .main__reg{
         margin: 10%;
@@ -819,7 +824,7 @@
 @media(min-width: 400px) and (max-width: 500px){
   .main{
       h3{ 
-          font-size: 15px;
+          font-size: 10px;
       }
   .main__reg{
       margin: 10%;
