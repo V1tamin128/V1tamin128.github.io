@@ -230,147 +230,136 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-    // Общие функции
-    const parsePrice = (price) => 
-        typeof price === 'string' ? parseFloat(price.replace(/[^\d.,]/g, '').replace(',', '.')) || 0 : price || 0;
+        // Общие функции
+        const parsePrice = (price) => 
+            typeof price === 'string' ? parseFloat(price.replace(/[^\d.,]/g, '').replace(',', '.')) || 0 : price || 0;
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.querySelector('.cart-items');
-    const totalPriceElement = document.querySelector('.total-price');
+        // Функция обновления корзины с триггером события
+        function updateCart(newCart) {
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            window.dispatchEvent(new Event('cartUpdated'));
+            return newCart;
+        }
 
-    // Генерация UUID
-    cart = cart.map(item => ({ 
-        ...item, 
-        uuid: item.uuid || Date.now() + Math.random().toString(36).slice(2) 
-    }));
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const totalPriceElement = document.querySelector('.total-price');
 
-    const checkedItems = new Set();
+        // Генерация UUID
+        cart = cart.map(item => ({ 
+            ...item, 
+            uuid: item.uuid || Date.now() + Math.random().toString(36).slice(2) 
+        }));
 
-    // Рендер корзины
-    function renderCart() {
-        cartItemsContainer.innerHTML = cart.map(item => `
-            <div class="cart-item" data-uuid="${item.uuid}">
-                <div class="cart-item-img">
-                    <img src="${item.image}" alt="${item.name}">
-                </div>
-                <div class="cart-item-info">
-                    <h3>${item.name}</h3>
-                    <p>${parsePrice(item.price)} BYN</p>
-                    <div class="item-actions">
-                        <button class="remove-item-btn">Удалить</button>
-                        <button class="checkout-item-btn">Оформить</button>
+        const checkedItems = new Set();
+
+        // Рендер корзины
+        function renderCart() {
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item" data-uuid="${item.uuid}">
+                    <div class="cart-item-img">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-info">
+                        <h3>${item.name}</h3>
+                        <p>${parsePrice(item.price)} BYN</p>
+                        <div class="item-actions">
+                            <button class="remove-item-btn">Удалить</button>
+                            <button class="checkout-item-btn">Оформить</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <input type="checkbox" 
+                               class="select-item" 
+                               id="item${item.uuid}" 
+                               ${checkedItems.has(item.uuid) ? 'checked' : ''}>
+                        <label for="item${item.uuid}"></label>
                     </div>
                 </div>
-                <div class="cart-item-actions">
-                    <input type="checkbox" 
-                           class="select-item" 
-                           id="item${item.uuid}" 
-                           ${checkedItems.has(item.uuid) ? 'checked' : ''}>
-                    <label for="item${item.uuid}"></label>
-                </div>
-            </div>
-        `).join('');
-        
-        updateTotal();
-    }
-
-   // Обновление общей суммы
-
-
-function updateTotal() {
-    const total = Array.from(checkedItems).reduce((sum, uuid) => {
-        const item = cart.find(i => i.uuid === uuid);
-        return sum + (item ? parsePrice(item.price) : 0);
-    }, 0);
-    totalPriceElement.textContent = `${total.toFixed(0)} BYN`;
-}
-
-    // Обработка оформления заказа
-    function handleCheckout(uuids) {
-        if(!uuids.length) return alert('Выберите товары!');
-        
-        const orderedItems = cart.filter(item => uuids.includes(item.uuid));
-        const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
-        
-        orderHistory.push({
-            date: new Date().toISOString(),
-            items: orderedItems,
-            total: orderedItems.reduce((sum, item) => sum + parsePrice(item.price), 0)
-        });
-        
-        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
-        localStorage.setItem('currentOrder', JSON.stringify(orderedItems));
-        
-        cart = cart.filter(item => !uuids.includes(item.uuid));
-        checkedItems.clear();
-        localStorage.setItem('cart', JSON.stringify(cart));
-        
-        window.location.href = 'registration.html';
-    }
-
-    // Обработчики событий
-    cartItemsContainer.addEventListener('click', e => {
-        const item = e.target.closest('.cart-item');
-        if(!item) return;
-        
-        const uuid = item.dataset.uuid;
-        if(e.target.classList.contains('remove-item-btn')) {
-            cart = cart.filter(i => i.uuid !== uuid);
-            checkedItems.delete(uuid);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            renderCart();
-        }
-        else if(e.target.classList.contains('checkout-item-btn')) {
-            handleCheckout([uuid]);
-        }
-    });
-
-    cartItemsContainer.addEventListener('change', e => {
-        if(e.target.classList.contains('select-item')) {
-            const uuid = e.target.closest('.cart-item').dataset.uuid;
-            e.target.checked ? checkedItems.add(uuid) : checkedItems.delete(uuid);
+            `).join('');
+            
             updateTotal();
         }
-    });
 
-    document.querySelector('.summ2')?.addEventListener('click', () => 
-        handleCheckout(Array.from(checkedItems)));
+        // Обновление общей суммы
+        function updateTotal() {
+            const total = Array.from(checkedItems).reduce((sum, uuid) => {
+                const item = cart.find(i => i.uuid === uuid);
+                return sum + (item ? parsePrice(item.price) : 0);
+            }, 0);
+            totalPriceElement.textContent = `${total.toFixed(0)} BYN`;
+        }
 
-    // Первоначальная загрузка
-    renderCart();
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика
-    const updateCartCounter = () => {
-        try {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const counterElements = document.querySelectorAll('.cart-counter');
+        // Обработка оформления заказа
+        function handleCheckout(uuids) {
+            if(!uuids.length) return alert('Выберите товары!');
             
-            counterElements.forEach(counter => {
-                if (!(counter instanceof HTMLElement)) return;
-                
-                counter.textContent = cart.length;
-                counter.style.display = cart.length > 0 ? 'flex' : 'none';
+            const orderedItems = cart.filter(item => uuids.includes(item.uuid));
+            const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+            
+            orderHistory.push({
+                date: new Date().toISOString(),
+                items: orderedItems,
+                total: orderedItems.reduce((sum, item) => sum + parsePrice(item.price), 0)
             });
             
-        } catch (error) {
-            console.error('Ошибка обновления счетчика:', error);
+            localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+            localStorage.setItem('currentOrder', JSON.stringify(orderedItems));
+            
+            cart = updateCart(cart.filter(item => !uuids.includes(item.uuid)));
+            checkedItems.clear();
+            
+            window.location.href = 'registration.html';
         }
-    };
 
-    // Обновляем при загрузке страницы
-    updateCartCounter();
+        // Обработчики событий
+        cartItemsContainer.addEventListener('click', e => {
+            const item = e.target.closest('.cart-item');
+            if(!item) return;
+            
+            const uuid = item.dataset.uuid;
+            if(e.target.classList.contains('remove-item-btn')) {
+                cart = updateCart(cart.filter(i => i.uuid !== uuid));
+                checkedItems.delete(uuid);
+                renderCart();
+            }
+            else if(e.target.classList.contains('checkout-item-btn')) {
+                handleCheckout([uuid]);
+            }
+        });
 
-    // Для динамических страниц (SPA) можно добавить обработчик изменений
-    window.addEventListener('storage', function(e) {
-        if (e.key === 'cart') {
-            updateCartCounter();
+        cartItemsContainer.addEventListener('change', e => {
+            if(e.target.classList.contains('select-item')) {
+                const uuid = e.target.closest('.cart-item').dataset.uuid;
+                e.target.checked ? checkedItems.add(uuid) : checkedItems.delete(uuid);
+                updateTotal();
+            }
+        });
+
+        document.querySelector('.summ2')?.addEventListener('click', () => 
+            handleCheckout(Array.from(checkedItems)));
+
+        // Общий счётчик корзины
+        function updateCartCounter() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const counterElements = document.querySelectorAll('.cart-counter');
+                
+                counterElements.forEach(counter => {
+                    if (!counter) return;
+                    counter.textContent = cart.length;
+                    counter.style.display = cart.length ? 'flex' : 'none';
+                });
+            } catch (error) {
+                console.error('Ошибка счётчика:', error);
+            }
         }
+
+        // Инициализация
+        renderCart();
+        updateCartCounter();
+        window.addEventListener('cartUpdated', updateCartCounter);
     });
-});
-    </script>
+</script>
       </body>
       </html>
