@@ -414,15 +414,49 @@
     });
 
 
-
-
     if (isValid) {
     document.getElementById('thankYouModal').style.display = 'flex';
     setTimeout(() => {
         document.getElementById('thankYouModal').style.display = 'none';
         window.location.href = 'profile.html';
     }, 3000);
-}
+} 
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    const historyContainer = document.querySelector('.history__items');
+
+    if (!historyContainer) return;
+
+    historyContainer.innerHTML = orderHistory.length ? '' : '<p>У вас пока нет заказов</p>';
+
+    orderHistory.reverse().forEach(order => {
+        const orderElement = document.createElement('div');
+        orderElement.className = 'history__items-item';
+        orderElement.innerHTML = `
+            <h4>Заказ от ${new Date(order.date).toLocaleDateString('ru-RU', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            })}</h4>
+            <p>Сумма: ${order.total.toFixed(2)} BYN</p>
+            <div class="order-items">
+                ${order.items.map(item => `
+                    <div class="order-item">
+                        <img src="${item.image}" alt="${item.name}" width="50">
+                        <span>${item.name} - ${parsePrice(item.price)} BYN</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        historyContainer.appendChild(orderElement);
+    });
+});
+
     </script>
     </body>
     </html>

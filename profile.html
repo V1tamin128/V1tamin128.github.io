@@ -67,6 +67,7 @@
       </clipPath>
       </defs>
       </svg>
+      <span class="cart-counter"></span>
                       </a>
                       <a href="profile.html" class="menu__nav">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,19 +124,11 @@
 
             </section>
             
-            <section class="history">
+            <!-- <section class="history">
                 <h3>История заказов</h3>
                 <div class="history__items">
-                  <div class="history__items-item">
-                    <p>Sony 12 12</p>
-                    <p>Цена: 1200 BYn</p>
-                  </div>
-                  <div class="history__items-item">
-                    <p>Sony 12 12</p>
-                    <p>Цена: 1200 BYn</p>
-                  </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="other__goods">
 <h3>Смотрите другие товары</h3>
@@ -265,69 +258,66 @@
 
 
 <script>
-    // Сохранение данных формы
-    function saveProfileData() {
-      const profileData = {
+ // Сохранение данных формы профиля
+function saveProfileData() {
+    const profileData = {
         name: document.getElementById('name').value,
         surname: document.getElementById('surname').value,
         email: document.getElementById('email').value
-      };
-      
-      // Сохраняет данные в localStorage
-      localStorage.setItem('profileData', JSON.stringify(profileData));
-      
-      // Показывает уведомление о сохранении
-      alert('Данные успешно сохранены!');
+    };
+    localStorage.setItem('profileData', JSON.stringify(profileData));
+    alert('Данные успешно сохранены!');
+}
+
+// Загрузка данных профиля
+function loadProfileData() {
+    const savedData = localStorage.getItem('profileData');
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        document.getElementById('name').value = data.name || '';
+        document.getElementById('surname').value = data.surname || '';
+        document.getElementById('email').value = data.email || '';
     }
-  
-    // Загрузка сохраненных данных
-    function loadProfileData() {
-      const savedData = localStorage.getItem('profileData');
-      
-      if (savedData) {
-        const profileData = JSON.parse(savedData);
-        
-        document.getElementById('name').value = profileData.name || '';
-        document.getElementById('surname').value = profileData.surname || '';
-        document.getElementById('email').value = profileData.email || '';
-      }
-    }
-  
-    // Загружает данные при загрузке страницы
-    document.addEventListener('DOMContentLoaded', loadProfileData);
-  
-    // Назначает обработчик кнопке "Сохранить"
-    document.querySelector('.button').addEventListener('click', function(e) {
-      e.preventDefault();
-      saveProfileData();
+}
+
+// Инициализация профиля
+document.addEventListener('DOMContentLoaded', () => {
+    loadProfileData();
+    document.querySelector('.button')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        saveProfileData();
     });
+});
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Функция обновления счетчика
+    const updateCartCounter = () => {
+        try {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const counterElements = document.querySelectorAll('.cart-counter');
+            
+            counterElements.forEach(counter => {
+                if (!(counter instanceof HTMLElement)) return;
+                
+                counter.textContent = cart.length;
+                counter.style.display = cart.length > 0 ? 'flex' : 'none';
+            });
+            
+        } catch (error) {
+            console.error('Ошибка обновления счетчика:', error);
+        }
+    };
 
+    // Обновляем при загрузке страницы
+    updateCartCounter();
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
-    const historyContainer = document.querySelector('.history__items');
-    
-    if (orderHistory.length === 0) {
-        historyContainer.innerHTML = '<p>У вас пока нет заказов</p>';
-        return;
-    }
-    
-    historyContainer.innerHTML = orderHistory.map(order => `
-        <div class="history__order">
-            <h4>Заказ от ${order.date}</h4>
-            <p>Сумма: ${order.total} BYN</p>
-            <div class="order-items">
-                ${order.items.map(item => `
-                    <div class="order-item">
-                        <img src="${item.image}" alt="${item.name}" width="50">
-                        <span>${item.name} - ${item.price} BYN</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `).join('');
+    // Для динамических страниц (SPA) можно добавить обработчик изменений
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'cart') {
+            updateCartCounter();
+        }
+    });
 });
   </script>
 </html>

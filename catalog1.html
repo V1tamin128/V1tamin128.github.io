@@ -67,6 +67,7 @@
   </clipPath>
   </defs>
   </svg>
+  <span class="cart-counter"></span>
                   </a>
                   <a href="profile.html" class="menu__nav">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -305,7 +306,38 @@
           products.forEach(product => goodsContainer.appendChild(product));
         }
       });
+
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+    // Функция обновления счетчика
+    const updateCartCounter = () => {
+        try {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const counterElements = document.querySelectorAll('.cart-counter');
+            
+            counterElements.forEach(counter => {
+                if (!(counter instanceof HTMLElement)) return;
+                
+                counter.textContent = cart.length;
+                counter.style.display = cart.length > 0 ? 'flex' : 'none';
+            });
+            
+        } catch (error) {
+            console.error('Ошибка обновления счетчика:', error);
+        }
+    };
+
+    // Обновляем при загрузке страницы
+    updateCartCounter();
+
+    // Для динамических страниц (SPA) можно добавить обработчик изменений
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'cart') {
+            updateCartCounter();
+        }
+    });
+});
     </script>
-    
 </body>
 </html>
