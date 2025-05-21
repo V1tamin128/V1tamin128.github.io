@@ -228,7 +228,7 @@
               </body>
               <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика
+    
     const updateCartCounter = () => {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -246,10 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Обновляем при загрузке страницы
     updateCartCounter();
 
-    // Для динамических страниц (SPA) можно добавить обработчик изменений
     window.addEventListener('storage', function(e) {
         if (e.key === 'cart') {
             updateCartCounter();

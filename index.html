@@ -263,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const modalContent = document.getElementById('modalContent');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-  // Обработчик отправки формы
   submitButton.addEventListener('click', function(e) {
     e.preventDefault();
     const email = emailInput.value.trim();
@@ -293,22 +292,18 @@ document.addEventListener('DOMContentLoaded', function() {
       '<p class="modal-text">На email <strong>' + email + '</strong> будет отправлено письмо с подтверждением</p>' 
         );
     
-    // Очищаем поле ввода
     emailInput.value = '';
   });
 
-  // Функция показа модального окна
   function showModal(content) {
     modalContent.innerHTML = content;
     modalOverlay.style.display = 'flex';
   }
 
-  // Обработчик закрытия модального окна
   modalCloseBtn.addEventListener('click', function() {
     modalOverlay.style.display = 'none';
   });
 
-  // Закрытие при клике вне окна
   modalOverlay.addEventListener('click', function(e) {
     if (e.target === modalOverlay) {
       modalOverlay.style.display = 'none';
@@ -319,7 +314,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика
     const updateCartCounter = () => {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -337,10 +331,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Обновляем при загрузке страницы
     updateCartCounter();
 
-    // Для динамических страниц (SPA) можно добавить обработчик изменений
     window.addEventListener('storage', function(e) {
         if (e.key === 'cart') {
             updateCartCounter();

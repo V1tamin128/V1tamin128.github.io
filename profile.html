@@ -258,7 +258,7 @@
 
 
 <script>
- // Сохранение данных формы профиля
+ // Сохранение профиля
 function saveProfileData() {
     const profileData = {
         name: document.getElementById('name').value,
@@ -269,7 +269,7 @@ function saveProfileData() {
     alert('Данные успешно сохранены!');
 }
 
-// Загрузка данных профиля
+// Загрузка данных
 function loadProfileData() {
     const savedData = localStorage.getItem('profileData');
     if (savedData) {
@@ -291,7 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика
     const updateCartCounter = () => {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -309,10 +308,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Обновляем при загрузке страницы
     updateCartCounter();
 
-    // Для динамических страниц (SPA) можно добавить обработчик изменений
     window.addEventListener('storage', function(e) {
         if (e.key === 'cart') {
             updateCartCounter();

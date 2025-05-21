@@ -274,7 +274,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика корзины
     const updateCartCounter = () => {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -289,12 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Инициализация счетчика
     updateCartCounter();
     window.addEventListener('cartUpdated', updateCartCounter);
     window.addEventListener('storage', e => e.key === 'cart' && updateCartCounter());
 
-    // Валидация и отправка формы
+    // Валидация
     document.getElementById('submitButton').addEventListener('click', function() {
         const fields = {
             name: {
@@ -336,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let isValid = true;
 
-        // Сброс ошибок
         Object.values(fields).forEach(({input}) => {
             input.style.border = '';
             const errorElement = input.nextElementSibling;
@@ -345,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Проверка полей
+        // Проверка
         for (const [key, {input, regex, error}] of Object.entries(fields)) {
             const value = input.value.trim();
             
@@ -357,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
-            // Дополнительная проверка срока действия карты
+            // Доп проверка срока действия
             if (key === 'cardDate' && regex.test(value)) {
                 const [month, year] = value.split('/');
                 const currentYear = new Date().getFullYear() % 100;
@@ -370,16 +367,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Обработка успешной отправки
         if (isValid) {
-            // Очистка формы
             Object.values(fields).forEach(({input}) => input.value = '');
             
-            // Очистка корзины
             localStorage.removeItem('cart');
             window.dispatchEvent(new Event('cartUpdated'));
             
-            // Показ модального окна и редирект
             document.getElementById('thankYouModal').style.display = 'flex';
             setTimeout(() => {
                 document.getElementById('thankYouModal').style.display = 'none';
@@ -396,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Маски ввода
     document.getElementById('surname').addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.startsWith('375')) value = '+' + value;

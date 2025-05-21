@@ -248,7 +248,7 @@
     <script>
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Конфигурация селекторов
+
     const SELECTORS = {
         HEADER: '.info__header h1',
         IMAGE: '.info__center-img img',
@@ -258,16 +258,15 @@ document.addEventListener('DOMContentLoaded', function() {
         MAIN_CONTAINER: '.main__info'
     };
 
-    // 1. Логика страницы товара
-    // ===========================================
+   
     
-    // Получение ID товара из URL
+    // Получение ID
     const getProductId = () => {
         const params = new URLSearchParams(window.location.search);
         return params.get('id');
     };
 
-    // Загрузка XML данных
+    // Загрузка XML
     const loadProductData = async () => {
         try {
             const response = await fetch('description1.xml');
@@ -278,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Парсинг XML и поиск товара
+    // Парсинг XML
     const parseProduct = (xmlText, id) => {
         try {
             const parser = new DOMParser();
@@ -301,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Обновление интерфейса товара
+ 
     const updateProductUI = (product) => {
         const elements = {
             header: document.querySelector(SELECTORS.HEADER),
@@ -311,19 +310,19 @@ document.addEventListener('DOMContentLoaded', function() {
             price: document.querySelector(SELECTORS.PRICE)
         };
 
-        // Проверка наличия элементов
+        // Проверка
         if (Object.values(elements).some(el => !el)) {
             throw new Error('Неверная структура страницы');
         }
 
-        // Заполнение данных
+        // Заполнение
         elements.header.textContent = product.name;
         elements.image.src = product.image;
         elements.image.alt = product.name;
         elements.description.textContent = product.description;
         elements.price.textContent = `Цена: ${product.price}`;
 
-        // Обновление характеристик
+        // Обновление
         elements.characteristics.querySelectorAll('p').forEach(p => p.remove());
         product.characteristics.forEach(char => {
             const p = document.createElement('p');
@@ -332,10 +331,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // 2. Логика корзины
-    // ===========================================
     
-    // Обновление счетчика корзины
+    // Обновление счетчика
     const updateCartCounter = () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const counter = document.querySelector('.cart-counter');
@@ -365,12 +362,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // 3. Общая инициализация
-    // ===========================================
     
     const init = async () => {
         try {
-            // Инициализация страницы товара
+    
             const productId = getProductId();
             if (!productId) throw new Error('Не указан ID товара');
 
@@ -378,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const product = parseProduct(xmlData, productId);
             updateProductUI(product);
 
-            // Инициализация корзины
+  
             setupAddToCartHandler();
             updateCartCounter();
 
@@ -391,12 +386,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Запуск приложения
     init();
 });
 
-// 4. Логика страницы корзины
-// ===========================================
 document.addEventListener('DOMContentLoaded', function() {
     if (!document.querySelector('.cart-items')) return;
 
@@ -404,7 +396,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartItemsContainer = document.querySelector('.cart-items');
     const totalPriceElement = document.querySelector('.total-price');
 
-    // Добавляем уникальные идентификаторы
     cart = cart.map(item => ({
         ...item,
         uuid: item.uuid || Date.now() + Math.random().toString(36).slice(2)
@@ -412,11 +403,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const checkedItems = new Set();
 
-    // Парсинг цены
     const parsePrice = price => 
         typeof price === 'string' ? parseFloat(price.replace(/\D+/g, '')) || 0 : price || 0;
 
-    // Рендер корзины
     function renderCart() {
         cartItemsContainer.innerHTML = cart.map(item => `
             <div class="cart-item" data-uuid="${item.uuid}">
@@ -444,21 +433,18 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTotal();
     }
 
-    // Обновление общей суммы
     function updateTotal() {
         const total = Array.from(checkedItems).reduce((sum, uuid) => 
             sum + parsePrice(cart.find(i => i.uuid === uuid)?.price || 0), 0);
         totalPriceElement.textContent = `${Math.round(total)} BYN`;
     }
 
-    // Обработка оформления заказа
     function handleCheckout(uuids) {
         if(!uuids.length) return alert('Выберите товары!');
         
         const orderedItems = cart.filter(item => uuids.includes(item.uuid));
         localStorage.setItem('currentOrder', JSON.stringify(orderedItems));
         
-        // Обновление истории заказов
         let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
         orderHistory.push({
             date: new Date().toLocaleString(),
@@ -467,7 +453,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-        // Обновление корзины
         cart = cart.filter(item => !uuids.includes(item.uuid));
         checkedItems.clear();
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -475,7 +460,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'registration.html';
     }
 
-    // Обработчики событий
     cartItemsContainer.addEventListener('click', e => {
         const item = e.target.closest('.cart-item');
         if(!item) return;
@@ -503,7 +487,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.summ2')?.addEventListener('click', () => 
         handleCheckout(Array.from(checkedItems)));
 
-    // Первоначальный рендер
     renderCart();
 });
 </script>

@@ -280,29 +280,26 @@
                 </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const sortSelect = document.getElementById('sort'); // Получаем элемент <select>
-        const goodsContainer = document.querySelector('.goods'); // Контейнер с товарами
+        const sortSelect = document.getElementById('sort');
+        const goodsContainer = document.querySelector('.goods'); 
     
-        // При изменении выбора в <select> вызываем сортировку
+        
         sortSelect.addEventListener('change', function() {
-          sortProducts(this.value); // this.value = 'price-asc' или 'price-desc'
+          sortProducts(this.value); 
         });
     
-        // Функция сортировки товаров
         function sortProducts(sortType) {
-          const products = Array.from(document.querySelectorAll('.product')); // Все товары в массиве
+          const products = Array.from(document.querySelectorAll('.product')); 
     
           products.sort((a, b) => {
-            // Получаем цену из <p> (удаляем " BYN" и преобразуем в число)
             const priceA = parseInt(a.querySelector('p').textContent.replace(' BYN', ''));
             const priceB = parseInt(b.querySelector('p').textContent.replace(' BYN', ''));
     
             if (sortType === 'price-asc') return priceA - priceB; // По возрастанию
             if (sortType === 'price-desc') return priceB - priceA; // По убыванию
-            return 0; // Без сортировки
+            return 0; 
           });
     
-          // Очищаем контейнер и вставляем отсортированные товары
           goodsContainer.innerHTML = '';
           products.forEach(product => goodsContainer.appendChild(product));
         }
@@ -311,7 +308,6 @@
 
 
       document.addEventListener('DOMContentLoaded', function() {
-    // Функция обновления счетчика
     const updateCartCounter = () => {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -329,10 +325,8 @@
         }
     };
 
-    // Обновляем при загрузке страницы
     updateCartCounter();
 
-    // Для динамических страниц (SPA) можно добавить обработчик изменений
     window.addEventListener('storage', function(e) {
         if (e.key === 'cart') {
             updateCartCounter();
